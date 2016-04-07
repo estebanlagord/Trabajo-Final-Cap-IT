@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_cursos"
+        android:icon="@drawable/menu_cursos"
+        android:title="@string/action_cursos"/>
+    <item
+        android:id="@+id/menu_mis_cursos"
+        android:icon="@drawable/menu_mis_cursos"
+        android:title="@string/action_mis_cursos">
+    </item>
+    <item
+        android:id="@+id/menu_cap_it"
+        android:icon="@drawable/menu_ubicar"
+        android:title="@string/action_show_cap_it">
+    </item>
+    <item
+        android:id="@+id/menu_vista"
+        android:icon="@drawable/menu_vista"
+        android:title="@string/action_vista">
+    </item>
+
+</menu>
