@@ -16,6 +16,8 @@ import android.preference.PreferenceManager;
 import android.util.Log;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
 import com.javier.lagord.trabajofinalcapit.database.DatabaseHelper;
 import com.javier.lagord.trabajofinalcapit.model.Curso;
 
@@ -74,8 +76,14 @@ public class Backend extends Object
 		if(response != null)
 		{	
 			Gson gson = new Gson();
-			Curso[] cursos = gson.fromJson(response, Curso[].class);
-			
+			Curso[] cursos = new Curso[0];
+			try {
+				cursos = gson.fromJson(response, Curso[].class);
+			} catch (Exception e) {
+				Log.e("Backend", "Error parsing Json response", e);
+				return false;
+			}
+
 			for (Curso cur : cursos) {
 				// Sacar el '.' del final del nombre
 				String nombre = cur.getNombre();
